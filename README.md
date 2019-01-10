@@ -15,6 +15,4 @@ base .netcore with vue project and basic API linked up
 
 ## Inside Visual Studio Code
 
-Swap to `dev` branch
-
 press `F5`
