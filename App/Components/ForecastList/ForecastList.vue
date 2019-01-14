@@ -13,7 +13,6 @@
 
 <script>
 import SampleDataAPI from '../../Api/SampleDataAPI.js'
-import $ from 'jquery'
 
 export default {
 	data () {
@@ -36,7 +35,3 @@ export default {
 	},
 }
 </script>
-
-<style lang="scss">
-
-</style>

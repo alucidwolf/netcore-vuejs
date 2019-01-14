@@ -1,30 +1,36 @@
 <template>
-	<div id="home">
-		<h1>Hello World!</h1>
-        <router-link to="todo">Todo List</router-link>
-        <router-link to="forecast">Forecast List</router-link>
-		<router-view></router-view> 
-	</div>
+  <div id="home">
+    <h1>Cendyn Admin</h1>
+    <MainNav></MainNav>
+    <router-view></router-view>
+    <div class="container">
+      <croppa v-model="myCroppa" :width="150" :height="150" :quality="1"></croppa>
+      <button @click="dataUrl = myCroppa.generateDataUrl('image/jpeg', 0.8)">Output 20% Compressed</button>
+    </div>
+    <div class="container">
+      <img :src="dataUrl">
+    </div>
+  </div>
 </template>
 
 <script>
-export default { }
+import MainNav from "./Components/MainNav/MainNav";
+
+export default {
+  name: "home",
+  components: {
+    MainNav
+  },
+  data() {
+    return { myCroppa: {}, dataUrl: "" };
+  },
+  methods: {
+    uploadCroppedImage() {
+      this.myCroppa.generateBlob(blob => {}, "image/jpeg", 0.8);
+    }
+  }
+};
 </script>
 
-<style lang="scss">
-@import './variables.scss';
-
-#home {
-	max-width: 400px;
-	margin: 0 auto;
-	line-height: 1.4;
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	color: $vue-blue;
-}
-
-h1 {
-	text-align: center;
-}
+<style>
 </style>
