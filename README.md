@@ -1,4 +1,4 @@
-"# netcore-vuejs" 
+# netcore-vuejs
 base .netcore with vue project and basic API linked up
 
 ## Type the following commands in the terminal
