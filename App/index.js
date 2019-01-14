@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
-import Croppa from 'vue-croppa'
 
 import App from './App.vue'
 import TodoList from './components/Todo/TodoList.vue'
 import ForecastList from './components/ForecastList/ForecastList.vue'
+import Cropper from './Components/Cropper/Cropper.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -14,7 +14,6 @@ import 'vue-croppa/dist/vue-croppa.css'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
-Vue.use(Croppa)
 
 const routes = [{
   path: '/',
@@ -26,6 +25,10 @@ const routes = [{
     {
       path: 'forecast',
       component: ForecastList
+    },
+    {
+      path: 'cropper',
+      component: Cropper
     }
   ]
 }]
