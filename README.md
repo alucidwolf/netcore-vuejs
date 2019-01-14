@@ -1,7 +1,10 @@
-"# netcore-vuejs" 
+# netcore-vuejs
 base .netcore with vue project and basic API linked up
 
-## Type the following commands in the terminal
+## Setup
+Install node 10.13.0 using NVM
+
+### Type the following commands in the terminal
 
 `git clone https://github.com/alucidwolf/netcore-vuejs.git`
 
@@ -13,6 +16,6 @@ base .netcore with vue project and basic API linked up
 
 `code .`
 
-## Inside Visual Studio Code
+### Inside Visual Studio Code
 
 press `F5`
