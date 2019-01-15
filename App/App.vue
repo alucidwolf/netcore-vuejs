@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <h1>Cendyn Admin</h1>
+    <SSOHeader></SSOHeader>
     <MainNav></MainNav>
     <router-view></router-view>
   </div>
@@ -8,11 +8,13 @@
 
 <script>
 import MainNav from "./Components/MainNav/MainNav";
+import SSOHeader from "./Components/SSOHeader/SSOHeader";
 
 export default {
   name: "home",
   components: {
-    MainNav
+    MainNav,
+    SSOHeader
   }
 };
 </script>

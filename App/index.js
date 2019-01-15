@@ -3,9 +3,7 @@ import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
 
 import App from './App.vue'
-import TodoList from './components/Todo/TodoList.vue'
-import ForecastList from './components/ForecastList/ForecastList.vue'
-import Cropper from './Components/Cropper/Cropper.vue'
+import Eproposal from './Components/Eproposal/Eproposal.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -19,18 +17,9 @@ const routes = [{
   path: '/',
   component: App,
   children: [{
-      path: 'todo',
-      component: TodoList
-    },
-    {
-      path: 'forecast',
-      component: ForecastList
-    },
-    {
-      path: 'cropper',
-      component: Cropper
-    }
-  ]
+    path: 'eproposal',
+    component: Eproposal
+  }]
 }]
 
 const router = new VueRouter({
