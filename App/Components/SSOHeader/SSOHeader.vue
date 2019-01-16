@@ -25,6 +25,11 @@
           </span>
         </b-navbar-brand>
 
+        <b-nav-form>
+          <!-- https://www.npmjs.com/package/vue-search-select -->
+          <model-select v-model="item" :options="options" placeholder="Select Property"></model-select>
+        </b-nav-form>
+
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown class="utility-nav" right no-caret>
@@ -46,8 +51,13 @@
 </template>
 
 <script>
+import { ModelSelect } from "vue-search-select";
+
 export default {
   name: "SSOHeader",
+  components: {
+    ModelSelect
+  },
   data() {
     return {
       userFirstInitial: "F",
@@ -77,8 +87,27 @@ export default {
           name: "eMenus",
           link: "dev.cendyn.com/eMenus"
         }
-      ]
+      ],
+      options: [
+        { value: "1", text: "aa" + " - " + "1" },
+        { value: "2", text: "ab" + " - " + "2" },
+        { value: "3", text: "bc" + " - " + "3" },
+        { value: "4", text: "cd" + " - " + "4" },
+        { value: "5", text: "de" + " - " + "5" }
+      ],
+      item: {
+        value: "",
+        text: ""
+      }
     };
+  },
+  methods: {
+    reset() {
+      this.item = {};
+    },
+    selectFromParentComponent1() {
+      this.item = this.options[0];
+    }
   }
 };
 </script>
@@ -88,9 +117,19 @@ export default {
 .sso-header {
   background-color: $brand-midnight;
   height: 65px;
+  .ui {
+    &.fluid {
+      &.dropdown {
+        min-width: 400px;
+      }
+    }
+  }
   .navbar {
     background-color: $brand-midnight;
     padding: 0;
+    .navbar-brand {
+      margin-right: 50px;
+    }
     .navbar-nav {
       .nav-link {
         padding: 0;

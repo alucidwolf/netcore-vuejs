@@ -1,8 +1,10 @@
 <template>
-  <div id="home">
+  <div>
     <SSOHeader></SSOHeader>
     <MainNav></MainNav>
-    <router-view></router-view>
+    <div class="container-fluid">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ import MainNav from "./Components/MainNav/MainNav";
 import SSOHeader from "./Components/SSOHeader/SSOHeader";
 
 export default {
-  name: "home",
+  name: "app",
   components: {
     MainNav,
     SSOHeader
@@ -19,5 +21,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "./Styles/variables.scss";
+a {
+  color: $brand-smoke;
+}
 </style>

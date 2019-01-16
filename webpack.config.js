@@ -3,11 +3,12 @@ var webpack = require('webpack')
 const bundleOutputDir = './wwwroot/dist';
 
 module.exports = {
- context: __dirname,
-  entry: { main: './App/index.js' },
+  context: __dirname,
+  entry: {
+    main: './App/index.js'
+  },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
@@ -59,11 +60,12 @@ module.exports = {
   },
   performance: {
     hints: false
-  },output: {
+  },
+  output: {
     path: path.join(__dirname, bundleOutputDir),
     filename: '[name].js',
     publicPath: 'dist/'
-},
+  },
   devtool: '#eval-source-map'
 }
 

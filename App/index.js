@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
 
 import App from './App.vue'
+import HomePage from './Components/Home/Home.vue'
 import Eproposal from './Components/Eproposal/Eproposal.vue'
+import Property from './Components/Property/Property.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -17,6 +19,12 @@ const routes = [{
   path: '/',
   component: App,
   children: [{
+    path: 'homepage',
+    component: HomePage
+  }, {
+    path: 'property',
+    component: Property
+  }, {
     path: 'eproposal',
     component: Eproposal
   }]
@@ -27,8 +35,7 @@ const router = new VueRouter({
   mode: 'history'
 })
 
-new Vue({
-  el: '#app',
-  template: '<div><router-view></router-view></div>',
-  router
-})
+const app = new Vue({
+  router,
+  template: '<div><router-view></router-view></div>'
+}).$mount('#app')

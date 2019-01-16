@@ -1,14 +1,19 @@
 <template>
   <div class="mainnav-wrapper container-fluid">
     <b-nav pills>
-      <b-nav-item to="eproposal">eProposal</b-nav-item>
+      <b-nav-item to="homepage">Home</b-nav-item>
+      <NavItems></NavItems>
     </b-nav>
   </div>
 </template>
 
 <script>
+import NavItems from "./NavItems.vue";
 export default {
-  name: "MainNav"
+  name: "MainNav",
+  components: {
+    NavItems
+  }
 };
 </script>
 
