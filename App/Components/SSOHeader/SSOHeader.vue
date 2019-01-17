@@ -129,7 +129,21 @@ export default {
   .ui {
     &.fluid {
       &.dropdown {
-        min-width: 400px;
+        background: transparent;
+        color: #fff;
+        > .dropdown {
+          &.icon {
+            padding-top: 14px;
+            right: 0;
+            &::before {
+              font-family: "Linearicons";
+              content: "\e93a";
+            }
+          }
+        }
+        > .default.text {
+          color: #fff;
+        }
       }
     }
   }
@@ -138,6 +152,7 @@ export default {
     padding: 0;
     .navbar-brand {
       margin-right: 50px;
+      padding-top: 0;
     }
     .navbar-nav {
       .nav-link {

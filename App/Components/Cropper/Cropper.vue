@@ -53,12 +53,12 @@
             <button @click="upload">Upload Image</button>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-12">
           <h4>Preview</h4>
           <mycropper
             v-model="myCroppa"
-            :width="croppaWidth"
-            :height="croppaHeight"
+            :width="croppaComputedWidth"
+            :height="croppaComputedHeight"
             :quality="1"
             :prevent-white-space="true"
             :zoom-speed="10"
@@ -75,10 +75,6 @@
             inital-size="natural"
             initial-size="cover"
           ></mycropper>
-        </div>
-        <div class="col-sm-6">
-          <h4>Image Output base:64</h4>
-          <img :src="dataUrl">
         </div>
         <div class="col-sm-12">
           <h4>Uploaded Images</h4>
@@ -113,6 +109,22 @@ export default {
       sliderMin: 0,
       sliderMax: 0
     };
+  },
+  computed: {
+    croppaComputedWidth: function() {
+      if (this.croppaWidth > 1000 && this.croppaHeight > 500) {
+        return this.croppaWidth / 1.5;
+      } else {
+        return this.croppaWidth;
+      }
+    },
+    croppaComputedHeight: function() {
+      if (this.croppaWidth > 1000 && this.croppaHeight > 500) {
+        return this.croppaHeight / 1.5;
+      } else {
+        return this.croppaHeight;
+      }
+    }
   },
   methods: {
     uploadCroppedImage() {

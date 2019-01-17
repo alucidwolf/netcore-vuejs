@@ -1,8 +1,12 @@
 # netcore-vuejs
+
 base .netcore with vue project and basic API linked up
 
 ## Setup
+
 Install node 10.13.0 using NVM
+
+Install .NET SDK `https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial`
 
 ### Type the following commands in the terminal
 
