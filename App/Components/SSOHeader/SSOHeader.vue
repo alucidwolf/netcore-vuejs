@@ -101,6 +101,15 @@ export default {
       }
     };
   },
+  watch: {
+    item: function(selected) {
+      console.log(selected.value);
+      this.$store.commit("updatePropertySelected", selected);
+      let currProp = this.$store.getters.getCurrentPropertySelected;
+      console.log(currProp);
+      this.$router.push("property");
+    }
+  },
   methods: {
     reset() {
       this.item = {};
