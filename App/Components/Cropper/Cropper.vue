@@ -112,14 +112,14 @@ export default {
   },
   computed: {
     croppaComputedWidth: function() {
-      if (this.croppaWidth > 1000 && this.croppaHeight > 500) {
+      if (this.croppaWidth > 1000 || this.croppaHeight > 500) {
         return this.croppaWidth / 1.5;
       } else {
         return this.croppaWidth;
       }
     },
     croppaComputedHeight: function() {
-      if (this.croppaWidth > 1000 && this.croppaHeight > 500) {
+      if (this.croppaWidth > 1000 || this.croppaHeight > 500) {
         return this.croppaHeight / 1.5;
       } else {
         return this.croppaHeight;

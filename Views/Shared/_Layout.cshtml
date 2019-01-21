@@ -1,16 +1,58 @@
 ﻿<!DOCTYPE html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - eProposal NG Vue Component Sandbox</title>
-    <base href="~/" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - eProposal NG Vue Component Sandbox</title>
+  <base href="~/" />
 
-    <!-- <link rel="stylesheet" href="~/dist/site.css" asp-append-version="true" /> -->
-    <link rel="stylesheet" href="https://uikits.cendyn.com/Areas/v002/Plugins/font-icons/css/font-icons.min.css" />
+  <!-- <link rel="stylesheet" href="~/dist/site.css" asp-append-version="true" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://uikits.cendyn.com/Areas/v002/Plugins/font-icons/css/font-icons.min.css" />
+
+  <style>
+    .cendyn-loader {
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      z-index: 99999;
+      background: #fff;
+    }
+
+    .cendyn-loader .loader-content {
+      position: absolute;
+      top: calc(50% - 30px);
+      left: 0;
+      right: 0;
+      display: inline-block;
+      width: auto;
+      opacity: 0.75;
+    }
+
+    .cendyn-loader .loader-content img {
+      max-height: 30px;
+      min-height: 30px;
+      vertical-align: middle;
+    }
+
+    .cendyn-loader .loader-content .text {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.2em;
+      line-height: 30px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+  </style>
 </head>
-<body>
-    @RenderBody()
 
-    @RenderSection("scripts", required: false)
+<body>
+  @RenderBody()
+
+  @RenderSection("scripts", required: false)
 </body>
+
 </html>

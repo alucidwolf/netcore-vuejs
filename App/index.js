@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
+import ToggleButton from "vue-js-toggle-button";
 
 import App from './App.vue'
 import HomePage from './Components/Home/Home.vue'
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
+Vue.use(ToggleButton)
 
 const routes = [{
   path: '/',

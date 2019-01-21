@@ -1,9 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+ViewData["Title"] = "Home Page";
 }
 
-<div id='app'>Loading...</div>
+<div id='app'>
+  <div class="cendyn-loader" id="loader">
+    <div class="loader-content">
+      <div class="text"><img src="https://uikits.cendyn.com/Areas/v002/Content/images/favicon-apple.png" alt="Loader"> Loading in progress...</div>
+    </div>
+  </div>
+</div>
 
 @section scripts {
-    <script src="~/dist/main.js" asp-append-version="true"></script>
+<script src="~/dist/main.js" asp-append-version="true"></script>
 }

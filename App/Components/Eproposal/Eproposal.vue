@@ -3,7 +3,27 @@
     <h4>eProposal</h4>
     <b-tabs>
       <b-tab title="Templates" active>
-        <br>Templates
+        <h5>eProposal Templates</h5>
+        <table class="table table-bordered">
+          <draggable :element="'tbody'" :options="{handle: '.handle-parent', group: 'tables'}">
+            <template>
+              <tr v-for="(item, index) in items">
+                <td>
+                  <span class="handle-parent">
+                    <span class="icon-move"></span>
+                  </span>
+                </td>
+                <td>
+                  <toggle-button v-model="item.tbstate"/>
+                </td>
+                <template>
+                  <td>{{item.name}}</td>
+                  <td>{{item.qty}}</td>
+                </template>
+              </tr>
+            </template>
+          </draggable>
+        </table>
       </b-tab>
       <b-tab title="Navigation">
         <br>Navigation
@@ -24,14 +44,31 @@
 
 <script>
 import ImageCropper from "../Cropper/Cropper";
+import Draggable from "vuedraggable";
 
 export default {
   name: "eproposal",
   components: {
-    ImageCropper
+    ImageCropper,
+    Draggable
   },
   data() {
-    return {};
+    return {
+      items: [
+        {
+          name: "name 1",
+          qty: "qty 1",
+          rate: "rate 1",
+          tbstate: false
+        },
+        {
+          name: "name 2",
+          qty: "qty 2",
+          rate: "rate 2",
+          tbstate: true
+        }
+      ]
+    };
   }
 };
 </script>
@@ -60,9 +97,6 @@ export default {
           border-color: $brand-primary #dee2e6 transparent #dee2e6;
         }
       }
-    }
-    li:first-child {
-      margin-left: 15px;
     }
   }
 }
