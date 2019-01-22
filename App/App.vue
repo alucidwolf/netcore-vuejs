@@ -3,7 +3,9 @@
     <SSOHeader></SSOHeader>
     <MainNav></MainNav>
     <div class="container-fluid">
-      <router-view></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </div>
   </div>
 </template>

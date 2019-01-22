@@ -10,18 +10,19 @@
       <div class="row">
         <div class="col-sm-2">
           <h4>Zoom Slider</h4>
-          <div class="form-group">
-            <input
-              class="my-cropper-slider-input"
-              v-model="sliderVal"
-              type="range"
-              @input="onSliderChange"
-              :min="sliderMin"
-              :max="sliderMax"
-              step=".001"
-            >
-            {{sliderVal}}
-          </div>
+		  <div class="form-group">
+		  	<span>
+		  		<input class="my-cropper-slider-input"
+					 v-model="sliderVal"
+					 type="range"
+					 @input="onSliderChange"
+					 :min="sliderMin"
+					 :max="sliderMax"
+					 step=".001">
+		  	</span>
+		  	<span class="icon-picture small pull-left"></span>
+		  	<span class="icon-picture pull-right"></span>
+		  </div>
         </div>
         <div class="col-sm-2">
           <div class="form-group">
@@ -35,19 +36,13 @@
             <input v-model.lazy.number="croppaHeight" type="number" class="form-control">
           </div>
         </div>
-        <div class="col-sm-2">
-          <div class="form-group">
-            <h4>Output</h4>
-            <button @click="dataUrl = myCroppa.generateDataUrl('image/jpeg', 0.8)">Output Image</button>
-          </div>
-        </div>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           <div class="form-group">
             <h4>Remove</h4>
             <button @click="resetCroppaImage">Remove Image</button>
           </div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           <div class="form-group">
             <h4>Upload</h4>
             <button @click="upload">Upload Image</button>
@@ -101,7 +96,6 @@ export default {
   data() {
     return {
       myCroppa: {},
-      dataUrl: "",
       dataUrlUploads: [],
       croppaWidth: 500,
       croppaHeight: 375,
@@ -138,7 +132,6 @@ export default {
     },
     resetCroppaImage() {
       this.myCroppa.remove();
-      this.dataUrl = "";
     },
     onSliderChange(evt) {
       var increment = evt.target.value;
