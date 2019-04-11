@@ -6,7 +6,7 @@ base .netcore with vue project and basic API linked up
 
 Install node 10.13.0 using NVM
 
-Install .NET SDK `https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial`
+Install .NET SDK `https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install`
 
 ### Type the following commands in the terminal
 
